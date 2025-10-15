@@ -77,7 +77,7 @@ jobs:
       RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
     steps:
       - name: Deploy to Railway
-        run: railway redeploy --service=${{ secrets.RAILWAY_SERVICE_ID }}
+        run: railway redeploy --service=${{ secrets.RAILWAY_SERVICE_ID }} -y
 
   # Пример деплоя на сервер (закомментирован)
   # deploy-to-server:
