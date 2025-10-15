@@ -62,7 +62,7 @@ jobs:
         echo "Date: $(date)" >> deployment-info.txt
     
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: deployment-info
         path: deployment-info.txt
