@@ -74,10 +74,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     container: ghcr.io/railwayapp/cli:latest
     env:
-      RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
     steps:
       - name: Deploy to Railway
-        run: railway up --service=${{ secrets.RAILWAY_SERVICE_ID }} --image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest -d
+        run: railway deployment trigger --service=${{ secrets.RAILWAY_SERVICE_ID }} --image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest -d
 
   # Пример деплоя на сервер (закомментирован)
   # deploy-to-server:
